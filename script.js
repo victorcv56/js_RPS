@@ -1,4 +1,4 @@
-// function to serve as computer choosing 
+// Function to get computer choice of RPS
 function getComputerChoice() 
 {
     const getRandomNumber = (min, max) => {
@@ -16,6 +16,7 @@ function getComputerChoice()
     return choice.toLowerCase();
 }
 
+//Start game of RPS
 function startGame(hChoice) 
 {
     let flag = true;

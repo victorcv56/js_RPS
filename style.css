@@ -31,3 +31,13 @@ button {
 body {
     background-color: black;
 }
+
+.scoreboard {
+    border: solid 2px red;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.score {
+    
+}

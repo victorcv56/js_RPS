@@ -29,45 +29,64 @@ function startGame(hChoice)
         
         if (hChoice == 'rock') 
         {
-            if (cChoice == 'scissors') uScore += 1;
-            else if (cChoice == 'paper') cScore += 1;
+            if (cChoice == 'scissors') {
+                uScore += 1;
+                console.log("user wins");
+            }
+            else if (cChoice == 'paper') {
+                cScore += 1;
+                console.log("computer wins");
+            }
             else console.log('draw!');
+            flag = false;
+
         }
 
         if (hChoice == 'paper') 
         {
-            if (cChoice == 'rock') uScore += 1;
-            else if (cChoice == 'scissors') cScore += 1;
+            if (cChoice == 'rock') 
+            {
+                uScore += 1;
+                console.log("user wins");
+                
+            }
+            else if (cChoice == 'scissors') 
+            {
+                cScore += 1;
+                console.log("computer wins");
+            }
             else console.log('draw!');
+            flag = false;
         }
         
         if (hChoice == 'scissors') 
         {
-            if (cChoice == 'paper') uScore += 1;
-            else if (cChoice == 'rock') cScore += 1;
+            if (cChoice == 'paper') 
+            {
+                uScore += 1;
+                console.log("user wins");
+            }
+            else if (cChoice == 'rock') 
+            {
+                cScore += 1;
+                console.log("computer wins");
+            }
             else console.log('draw!');
+            flag = false;
         }
         // console.log(``)
         // console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
         
-        //if (uScore == 3 || cScore == 3) flag = false;
+        // if (uScore >= 3 || cScore >= 3) 
+        //     flag = false;
+
     }
-
-    // getHumanChoice();
-    // if (cScore == 3) {
-    //     console.log("Computer winss!");
-    // }
-
-    // else if (uScore == 3) {
-    //     console.log("Human winss!")
-    // }`
-    
 }
 
 const rButton = document.querySelector("#rock");
 const pButton = document.querySelector(".paper");
 const sButton = document.querySelector(".scissors");
-const hChoice = '';
+// const hChoice = '';
 //Will not change the string to what i need it to
 
 rButton.addEventListener("click", () => {
@@ -85,8 +104,8 @@ sButton.addEventListener("click", () => {
     startGame(hChoice);
 });
 
-// let uScore = 0;
-// let cScore = 0;
+let uScore = 0;
+let cScore = 0;
 
 // startGame();
 

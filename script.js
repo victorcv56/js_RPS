@@ -8,7 +8,7 @@ function getComputerChoice()
     let num = getRandomNumber(1, 10);
     let choice = '';
 
-    console.log(num);
+    // console.log(num);
     if (num < 3 + 1) choice += 'Rock';
     else if (num > 3  && num < 6 + 1) choice += 'Paper';
     else if (num > 6 ) choice += 'Scissors';
@@ -75,7 +75,7 @@ function startGame(hChoice)
             flag = false;
         }
         // console.log(``)
-        // console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
+        console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
         
         // if (uScore >= 3 || cScore >= 3) 
         //     flag = false;
@@ -106,11 +106,6 @@ sButton.addEventListener("click", () => {
 
 let uScore = 0;
 let cScore = 0;
-
-// startGame();
-
-// console.log(`score is ${uScore} vs ${cScore}`);
-
 
 
 /*

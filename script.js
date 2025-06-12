@@ -17,91 +17,91 @@ function getComputerChoice()
 }
 
 //Start game of RPS
-function startGame(hChoice) 
+
+
+function startGame(uChoice)
 {
-    let flag = true;
+    // get computer choice from outside function
+    let cChoice = getComputerChoice();
 
-    while (flag) 
+    console.log(`User threw ${uChoice}. \nComputer threw ${cChoice}.`)
+    // if else that pits choices aginast each other to see 
+    // who wins round
+
+    const userScore = document.querySelector('#uScore');
+    const compScore = document.querySelector('#cScore');
+
+    if (uChoice == 'rock') 
     {
-        let cChoice = getComputerChoice();
-        // let hChoice = hChoice; //changed to input from outside
-        console.log(`User threw ${hChoice}.\nComputer threw ${cChoice}.`)
-        
-        if (hChoice == 'rock') 
-        {
-            if (cChoice == 'scissors') {
-                uScore += 1;
-                console.log("user wins");
-            }
-            else if (cChoice == 'paper') {
-                cScore += 1;
-                console.log("computer wins");
-            }
-            else console.log('draw!');
-            flag = false;
-
+        if (cChoice == 'scissors') {
+            uScore += 1;
+            userScore.textContent = uScore;
+            console.log("user wins");
         }
-
-        if (hChoice == 'paper') 
-        {
-            if (cChoice == 'rock') 
-            {
-                uScore += 1;
-                console.log("user wins");
-                
-            }
-            else if (cChoice == 'scissors') 
-            {
-                cScore += 1;
-                console.log("computer wins");
-            }
-            else console.log('draw!');
-            flag = false;
+        else if (cChoice == 'paper') {
+            cScore += 1;
+            compScore.textContent = cScore;
+            console.log("computer wins");
         }
-        
-        if (hChoice == 'scissors') 
-        {
-            if (cChoice == 'paper') 
-            {
-                uScore += 1;
-                console.log("user wins");
-            }
-            else if (cChoice == 'rock') 
-            {
-                cScore += 1;
-                console.log("computer wins");
-            }
-            else console.log('draw!');
-            flag = false;
-        }
-        // console.log(``)
-        console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
-        
-        // if (uScore >= 3 || cScore >= 3) 
-        //     flag = false;
-
+        else console.log('draw!');
+        flag = false;
     }
+
+    if (uChoice == 'paper') 
+    {
+        if (cChoice == 'rock') {
+            uScore += 1;
+            userScore.textContent = uScore;
+            console.log("user wins");
+        }
+        else if (cChoice == 'scissors') {
+            cScore += 1;
+            compScore.textContent = cScore;
+            console.log("computer wins");
+        }
+        else console.log('draw!');
+        flag = false;
+    }
+
+    if (uChoice == 'scissors') 
+    {
+        if (cChoice == 'paper') {
+            uScore += 1;
+            userScore.textContent = uScore;
+            console.log("user wins");
+        }
+        else if (cChoice == 'rock') {
+            cScore += 1;
+            compScore.textContent = cScore;
+            console.log("computer wins");
+        }
+        else console.log('draw!');
+        flag = false;
+    }
+
+    console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
+
 }
 
 const rButton = document.querySelector("#rock");
 const pButton = document.querySelector(".paper");
 const sButton = document.querySelector(".scissors");
-// const hChoice = '';
+// const uChoice = '';
 //Will not change the string to what i need it to
 
 rButton.addEventListener("click", () => {
-    const hChoice = "rock";   
-    startGame(hChoice);
+    const uChoice = "rock";   
+    startGame(uChoice);
 });
 
 pButton.addEventListener("click", () => {
-    const hChoice = "paper";   
-    startGame(hChoice);
+    const uChoice = "paper";   
+    startGame(uChoice);
 });
 
 sButton.addEventListener("click", () => {
-    const hChoice = "scissors";   
-    startGame(hChoice);
+    const uChoice = "scissors";   
+    startGame(uChoice);
 });
 
 let uScore = 0;

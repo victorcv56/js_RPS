@@ -33,8 +33,24 @@ body {
 }
 
 .scoreboard {
-    border: solid 2px red;
+    /* border: solid 2px red; */
     color: whitesmoke;
     text-align: center;
 }
 
+.choice-prompt {
+    color: whitesmoke;
+}
+
+.result-message {
+    color: whitesmoke;
+}
+
+.choice-text {
+    display: flex;
+    padding-top: 50px;
+    font-size: 1.3rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -18,32 +18,40 @@ function getComputerChoice()
 
 //Start game of RPS
 
+// function restartGame()
+// {
+//     window.location.reload();
+// }
 
 function startGame(uChoice)
 {
     // get computer choice from outside function
     let cChoice = getComputerChoice();
 
-    console.log(`User threw ${uChoice}. \nComputer threw ${cChoice}.`)
+    const choiceMsg = `User threw ${uChoice}. \nComputer threw ${cChoice}.`
     // if else that pits choices aginast each other to see 
     // who wins round
 
     const userScore = document.querySelector('#uScore');
     const compScore = document.querySelector('#cScore');
+    const choice = document.querySelector(".choice-prompt");
+    const result = document.querySelector(".result-message");
 
+    choice.textContent = choiceMsg;
+    
     if (uChoice == 'rock') 
     {
         if (cChoice == 'scissors') {
             uScore += 1;
             userScore.textContent = uScore;
-            console.log("user wins");
+            result.textContent = "User wins";
         }
         else if (cChoice == 'paper') {
             cScore += 1;
             compScore.textContent = cScore;
-            console.log("computer wins");
+            result.textContent = "Computer wins";
         }
-        else console.log('draw!');
+        else result.textContent = "Draw!";
         flag = false;
     }
 
@@ -52,14 +60,14 @@ function startGame(uChoice)
         if (cChoice == 'rock') {
             uScore += 1;
             userScore.textContent = uScore;
-            console.log("user wins");
+            result.textContent = "User wins";
         }
         else if (cChoice == 'scissors') {
             cScore += 1;
             compScore.textContent = cScore;
-            console.log("computer wins");
+            result.textContent = "Computer wins";
         }
-        else console.log('draw!');
+        else result.textContent = "Draw!";
         flag = false;
     }
 
@@ -68,17 +76,16 @@ function startGame(uChoice)
         if (cChoice == 'paper') {
             uScore += 1;
             userScore.textContent = uScore;
-            console.log("user wins");
+            result.textContent = "User wins";
         }
         else if (cChoice == 'rock') {
             cScore += 1;
             compScore.textContent = cScore;
-            console.log("computer wins");
+            result.textContent = "Computer wins";
         }
-        else console.log('draw!');
+        else result.textContent = "Draw!";
         flag = false;
     }
-
     console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
 
 }
@@ -118,9 +125,3 @@ Another thing to consider is math.random() gives us a number
 between 0-1 which we can convert to whole numbers if i multiply
 by 10, but i need to stop at 9..
 */
-
-// Random number within a range formula: 
-
-// const getRandomNumner = (min, max) {
-//     return Math.random() * (max - min) + min
-// }

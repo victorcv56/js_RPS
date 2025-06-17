@@ -4,30 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayRPS</title>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="title">
-        <!-- <h1>Lets Play</h1> -->
-        <!-- <h1>Rock Paper Scissors</h1> -->
-    </div>
+    <div class="header">
+        <div class="title"></div>
     
-
-    <div class="scoreboard">
-        <h2>Scoreboard</h2>
-        <!-- Use DOM to add score for user and computer -->
-         <p>User: <span id="uScore">0</span></p>
-
-         <p>Computer: <span id="cScore">0</span> </p>
+        <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <!-- Use DOM to add score for user and computer -->
+             <p>User: <span id="uScore">0</span> 
+                Computer: <span id="cScore">0</span> </p>
+        </div>
     </div>
+        
     <div class="buttonContainer">
         <button id="rock">Rock</button>
         <button class="paper">Paper</button>    
         <button class="scissors">Scissors</button>
     </div>
-    <script src="script.js"> </script>
 
+    <div class="footer">
+        <div class="choice-text">
+            <p class="choice-prompt"></p>
+            <p class="result-message"></p>
+        </div>
+    </div>
+    <script src="script.js"> </script>
 </body>
 </html>
 

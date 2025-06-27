@@ -27,18 +27,18 @@ function startGame(uChoice)
 {
     // get computer choice from outside function
     let cChoice = getComputerChoice();
-
+    // message of choices made by user and computer
     const choiceMsg = `User threw ${uChoice}. \nComputer threw ${cChoice}.`
-    // if else that pits choices aginast each other to see 
-    // who wins round
 
     const userScore = document.querySelector('#uScore');
     const compScore = document.querySelector('#cScore');
-    const choice = document.querySelector(".choice-prompt");
+    const choice = document.querySelector(".choice-made");
     const result = document.querySelector(".result-message");
 
+    // displays choices made by user and computer message on screen
     choice.textContent = choiceMsg;
     
+    // if else blocks to determine winner of round
     if (uChoice == 'rock') 
     {
         if (cChoice == 'scissors') {
@@ -87,7 +87,8 @@ function startGame(uChoice)
         flag = false;
     }
 
-    checkScore(uScore, cScore);
+    // checks to see who reached max score
+    gameResult(uScore, cScore);
 
 } // End StartGame function
 
@@ -97,19 +98,19 @@ function gameResult(uScore, cScore)
     if (uScore == 5)
     {   
         winnerMsg.textContent = "User Won Game!!" 
-        prompt("Play again?"); // trying to see if i can prompt buttons
+        // prompt("Play again?"); // trying to see if i can prompt buttons
     }   
     else if (cScore == 5)
     {
         winnerMsg.textContent = "Computer Won Game!!";
-        prompt("Play again?");
+        // prompt("Play again?");
     }
     
 
 }
 
 
-const rButton = document.querySelector("#rock");
+const rButton = document.querySelector(".rock");
 const pButton = document.querySelector(".paper");
 const sButton = document.querySelector(".scissors");
 

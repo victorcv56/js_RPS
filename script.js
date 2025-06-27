@@ -86,15 +86,32 @@ function startGame(uChoice)
         else result.textContent = "Draw!";
         flag = false;
     }
-    console.log(`uScore = ${uScore} \ncScore = ${cScore}`)
+
+    checkScore(uScore, cScore);
+
+} // End StartGame function
+
+function gameResult(uScore, cScore)
+{
+    const winnerMsg = document.querySelector(".endgame-message");
+    if (uScore == 5)
+    {   
+        winnerMsg.textContent = "User Won Game!!" 
+        prompt("Play again?"); // trying to see if i can prompt buttons
+    }   
+    else if (cScore == 5)
+    {
+        winnerMsg.textContent = "Computer Won Game!!";
+        prompt("Play again?");
+    }
+    
 
 }
+
 
 const rButton = document.querySelector("#rock");
 const pButton = document.querySelector(".paper");
 const sButton = document.querySelector(".scissors");
-// const uChoice = '';
-//Will not change the string to what i need it to
 
 rButton.addEventListener("click", () => {
     const uChoice = "rock";   

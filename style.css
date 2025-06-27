@@ -1,24 +1,54 @@
-.title {
-    color: rgb(110, 110, 165);
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* justify-items: center; */
-    text-align: center;
+/* justify-content: distribute children(group) along primary axis */
+/* align-items: change alingment of children(group) along cross-axis */
+/* align-self: change the alignment of child element */
+
+*, 
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* html {
+    box-sizing: border-box;
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.header {
+    border: 2px red solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
 }
 
 .buttonContainer {
+    border: red 2px solid;
     display: flex;
-    border: solid 2px black;
+    height: 10vh;
+    margin: 2vh;
+    justify-content: space-around;
+    
+
+}
+
+/* 
+.buttonContainer {
+    display: flex;
     justify-content: space-around;
     margin-top: 100px;
-    /* padding: 100px; */
-    /* height: 300px; */
     
 }
 
-button {
+.endgame-message {
+    color: white;
+}
+
+button {  
     width: 200px;
     height: 200px;
     font-size: 2rem;
@@ -33,7 +63,6 @@ body {
 }
 
 .scoreboard {
-    /* border: solid 2px red; */
     color: whitesmoke;
     text-align: center;
 }
@@ -53,4 +82,4 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-}
+} */

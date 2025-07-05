@@ -19,7 +19,7 @@ body {
 }
 
 .header {
-    border: 2px red solid;
+    /* border: 2px red solid; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,10 +27,10 @@ body {
 }
 
 .buttonContainer {
-    border: red 2px solid;
+    /* border: red 2px solid; */
     display: flex;
     height: 20vh;
-    /* margin: 2vh; */
+    margin: 2vh;
     justify-content: space-around;
 }
 
@@ -38,4 +38,16 @@ button {
     color: white;
     background-color: black;
     width: 25vw;
+}
+
+.endgame-popup {
+    border: red 2px solid;
+    display: flex; 
+    justify-content: center;
+}
+
+.gameover-msg {
+    /* margin-left: 20px; */
+    border: solid 2px red;
+    padding-left: 20px;
 }

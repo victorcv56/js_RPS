@@ -1,3 +1,12 @@
+
+const rButton = document.querySelector(".rock");
+const pButton = document.querySelector(".paper");
+const sButton = document.querySelector(".scissors");
+const endGamePop = document.querySelector(".endgame-popup");
+const endMsg = document.querySelector('.gameover-msg');
+const resultMsg = document.querySelector('.gameresult-msg');
+// const resetBtn = document.querySelector('.startagain-btn');
+    
 // Function to get computer choice of RPS
 function getComputerChoice() 
 {
@@ -15,13 +24,6 @@ function getComputerChoice()
     
     return choice.toLowerCase();
 }
-
-//Start game of RPS
-
-// function restartGame()
-// {
-//     window.location.reload();
-// }
 
 function startGame(uChoice)
 {
@@ -42,12 +44,12 @@ function startGame(uChoice)
     if (uChoice == 'rock') 
     {
         if (cChoice == 'scissors') {
-            uScore += 1;
+            uScore ++;
             userScore.textContent = uScore;
             result.textContent = "User wins";
         }
         else if (cChoice == 'paper') {
-            cScore += 1;
+            cScore ++;
             compScore.textContent = cScore;
             result.textContent = "Computer wins";
         }
@@ -58,12 +60,12 @@ function startGame(uChoice)
     if (uChoice == 'paper') 
     {
         if (cChoice == 'rock') {
-            uScore += 1;
+            uScore ++;
             userScore.textContent = uScore;
             result.textContent = "User wins";
         }
         else if (cChoice == 'scissors') {
-            cScore += 1;
+            cScore ++;
             compScore.textContent = cScore;
             result.textContent = "Computer wins";
         }
@@ -74,12 +76,12 @@ function startGame(uChoice)
     if (uChoice == 'scissors') 
     {
         if (cChoice == 'paper') {
-            uScore += 1;
+            uScore ++;
             userScore.textContent = uScore;
             result.textContent = "User wins";
         }
         else if (cChoice == 'rock') {
-            cScore += 1;
+            cScore ++;
             compScore.textContent = cScore;
             result.textContent = "Computer wins";
         }
@@ -98,21 +100,49 @@ function gameResult(uScore, cScore)
     if (uScore == 5)
     {   
         winnerMsg.textContent = "User Won Game!!" 
-        // prompt("Play again?"); // trying to see if i can prompt buttons
+        // endGamePop.style.display = 'block';
+        PlayAgain(uScore);
     }   
     else if (cScore == 5)
     {
         winnerMsg.textContent = "Computer Won Game!!";
         // prompt("Play again?");
+        PlayAgain(uScore);
     }
-    
-
 }
 
+function PlayAgain(uScore) 
+{
+    // const endMsg = document.querySelector('.gameover-msg');
+    // const resultMsg = document.querySelector('.gameresult-msg');
+    // const resetBtn = document.querySelector('.startagain-btn');
+    // Creating button to memory to use on DOM manipulation
+    const resetBtn = document.createElement('button');
+    if (uScore === 5)
+    {
+        // endGamePop.style.display = 'block';
+        endMsg.textContent = 'You Won!';
+        endMsg.appendChild(resetBtn);
+        resetBtn.style.display = 'block';
 
-const rButton = document.querySelector(".rock");
-const pButton = document.querySelector(".paper");
-const sButton = document.querySelector(".scissors");
+        resetBtn.textContent = 'Play Again?';
+        resetBtn.addEventListener('click', () => window.location.reload());        
+        // endMsg.removeChild(resetBtn);
+    }
+
+    else 
+    {
+        // endGamePop.style.display = 'block';
+        endMsg.textContent = 'You lost!';
+        endMsg.appendChild(resetBtn);
+        resetBtn.style.display = 'block';
+
+        resetBtn.textContent = 'get Revenge?';
+        resetBtn.addEventListener('click', () => window.location.reload());
+        // endMsg.removeChild(resetBtn);
+    }
+}
+
 
 rButton.addEventListener("click", () => {
     const uChoice = "rock";   

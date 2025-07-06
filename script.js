@@ -2,7 +2,7 @@
 const rButton = document.querySelector(".rock");
 const pButton = document.querySelector(".paper");
 const sButton = document.querySelector(".scissors");
-const endGamePop = document.querySelector(".endgame-popup");
+const endgamePop = document.querySelector(".endgame-popup");
 const endMsg = document.querySelector('.gameover-msg');
 const resultMsg = document.querySelector('.gameresult-msg');
 // const resetBtn = document.querySelector('.startagain-btn');
@@ -34,8 +34,8 @@ function startGame(uChoice)
 
     const userScore = document.querySelector('#uScore');
     const compScore = document.querySelector('#cScore');
-    const choice = document.querySelector(".choice-made");
-    const result = document.querySelector(".result-message");
+    const choice = document.querySelector(".choice-msg");
+    const result = document.querySelector(".result-msg");
 
     // displays choices made by user and computer message on screen
     choice.textContent = choiceMsg;
@@ -94,55 +94,51 @@ function startGame(uChoice)
 
 } // End StartGame function
 
+// Function that will take scores and see who won
 function gameResult(uScore, cScore)
 {
-    const winnerMsg = document.querySelector(".endgame-message");
-    if (uScore == 5)
+    const winnerMsg = document.querySelector(".endgame-msg");
+    if (uScore === 5)
     {   
         winnerMsg.textContent = "User Won Game!!" 
-        // endGamePop.style.display = 'block';
         PlayAgain(uScore);
     }   
-    else if (cScore == 5)
+    else if (cScore === 5)
     {
         winnerMsg.textContent = "Computer Won Game!!";
-        // prompt("Play again?");
         PlayAgain(uScore);
     }
 }
 
 function PlayAgain(uScore) 
 {
-    // const endMsg = document.querySelector('.gameover-msg');
-    // const resultMsg = document.querySelector('.gameresult-msg');
-    // const resetBtn = document.querySelector('.startagain-btn');
-    // Creating button to memory to use on DOM manipulation
     const resetBtn = document.createElement('button');
     if (uScore === 5)
     {
-        // endGamePop.style.display = 'block';
         endMsg.textContent = 'You Won!';
-        endMsg.appendChild(resetBtn);
-        resetBtn.style.display = 'block';
+        endgamePop.appendChild(resetBtn);
 
         resetBtn.textContent = 'Play Again?';
         resetBtn.addEventListener('click', () => window.location.reload());        
-        // endMsg.removeChild(resetBtn);
     }
 
     else 
     {
-        // endGamePop.style.display = 'block';
         endMsg.textContent = 'You lost!';
-        endMsg.appendChild(resetBtn);
+        endgamePop.appendChild(resetBtn);
         resetBtn.style.display = 'block';
 
         resetBtn.textContent = 'get Revenge?';
         resetBtn.addEventListener('click', () => window.location.reload());
-        // endMsg.removeChild(resetBtn);
     }
 }
 
+function disableButtons() 
+{
+    rButton.disable = true;
+    sButton.disbale = true;
+    pButton.disable = true;
+}
 
 rButton.addEventListener("click", () => {
     const uChoice = "rock";   

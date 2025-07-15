@@ -101,33 +101,44 @@ function gameResult(uScore, cScore)
     if (uScore === 5)
     {   
         winnerMsg.textContent = "User Won Game!!" 
-        PlayAgain(uScore);
+        PlayAgain();
     }   
     else if (cScore === 5)
     {
         winnerMsg.textContent = "Computer Won Game!!";
-        PlayAgain(uScore);
+        PlayAgain();
     }
 }
 
-function PlayAgain(uScore) 
+// function that will add class name to class to make it pop up
+function activatePopup() {
+    endgamePop.element.classList.add('pop');
+
+}
+
+function deactivatePopup() {
+    // removes class name from element to be able to restart game... maybe
+    endgamePop.element.classList.remove('pop');
+
+}
+
+function PlayAgain() 
 {
     const resetBtn = document.createElement('button');
     if (uScore === 5)
     {
+        // activatePopup();
         endMsg.textContent = 'You Won!';
         endgamePop.appendChild(resetBtn);
-
         resetBtn.textContent = 'Play Again?';
         resetBtn.addEventListener('click', () => window.location.reload());        
     }
 
     else 
     {
+        // activatePopup();
         endMsg.textContent = 'You lost!';
         endgamePop.appendChild(resetBtn);
-        resetBtn.style.display = 'block';
-
         resetBtn.textContent = 'get Revenge?';
         resetBtn.addEventListener('click', () => window.location.reload());
     }

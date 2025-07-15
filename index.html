@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayRPS</title>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<<<<<<< HEAD
     <div class="title">
         <h1>Lets Play</h1>
         <h1>Rock Paper Scissors</h1>
@@ -22,13 +22,33 @@
 
         </div>
     </div>
+=======
+    <div class="header"> <!-- top screen divs-->
+        <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <!-- Use DOM to add score for user and computer -->
+            <p>User: <span id="uScore">0</span>
+               Computer: <span id="cScore">0</span> </p>
+        </div>
+    </div> 
+>>>>>>> rps-ui
     <div class="buttonContainer">
-        <button id="rock">Rock</button>
+        <button class="rock">Rock</button>
         <button class="paper">Paper</button>    
         <button class="scissors">Scissors</button>
     </div>
-    <script src="script.js"> </script>
+    <div class="footer"> <!-- bottom screen divs-->
+        <div class="endgame-msg">
+            <p class="choice-msg"></p>
+            <p class="result-msg"></p>
+        </div>
+    </div>
 
+    <div class="endgame-popup">
+        <p class="gameover-msg"></p>
+        <p class="gameresult-msg"></p>
+    </div>
+    <script src="script.js"> </script>
 </body>
 </html>
 
